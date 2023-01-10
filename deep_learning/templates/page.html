@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<!--<h1>Deep learning algorithms</h1>
+<form method="post" action="/">
+    <h3>choose  your algorithm</h3>
+        <select name="algo" id="algo">
+            <option value="ANN">ANN</option>
+            <option value="RNN">RNN</option>
+            <option value="CNN">CNN</option>
+            <option value="LSTM">LSTM</option>
+        </select>
+        <input type="submit" value="Run sim">
+</form>
+<div>
+    <h3>Your choice is:{{algo}}</h3>
+</div>
+
+@app.route('/',methods=['Get'])
+def index():
+    return(render_template('page.html'))
+
+@app.route('/',methods=['Post'])
+def result():
+    algo=request.form['algo']
+    print(algo)
+   return(render_template('page.html',algo=algo))
+
+
+-->
+    <div style="background-color: green;text-align: center"><h1>Is it an organic or recyclable object</h1></div>
+    <img src="../static/img/download.jpg" alt="Grenn life" width="150" height="220">
+
+<form method="post" action="/" enctype="multipart/form-data">
+            <div id="image-output">
+                <!-- L'image sera affichée ici une fois sélectionnée -->
+            </div>
+
+    <p>Upload photo</p>
+    <input type="file" id="image-input" name="file" class="form-control" autocomplete="off" required>
+    <input type="submit" value="Predict" class="btn btn-info">
+</form>
+<script>
+    const inputElement = document.getElementById('image-input');
+    const outputElement = document.getElementById('image-output');
+    const outputElement2 = document.getElementById('image-output2');
+
+    inputElement.addEventListener('change', () => {
+        const file = inputElement.files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener('load', () => {
+            outputElement.innerHTML = `<img src="${reader.result}" alt="Selected Image">`;
+            outputElement2.innerHTML = `<img src="${reader.result}" alt="Selected Image">`;
+        });
+
+        reader.readAsDataURL(file);
+    });
+</script>
+</body>
+</html>
